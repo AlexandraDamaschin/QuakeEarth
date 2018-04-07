@@ -63,13 +63,13 @@ public class QueryUtils {
                 String magnitude = properties.getString("mag");
 
                 //extract value for time
-                String time = properties.getString("time");
+                long time = properties.getLong("time");
 
                 //extract value for place
                 String location = properties.getString("place");
 
                 //create new object with mag, time and location for the response
-                Earthquake earthquake= new Earthquake(magnitude, location, time);
+                Earthquake earthquake = new Earthquake(magnitude, location, time);
 
                 //add new object to the list
                 earthquakes.add(earthquake);
