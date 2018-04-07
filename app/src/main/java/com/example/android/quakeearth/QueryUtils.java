@@ -47,10 +47,10 @@ public class QueryUtils {
         try {
 
             //create json object
-            JSONObject baseJsonRespone = new JSONObject(SAMPLE_JSON_RESPONSE);
+            JSONObject baseJsonResponse = new JSONObject(SAMPLE_JSON_RESPONSE);
 
             //extract json array for features
-            JSONArray earthquakeArray = baseJsonRespone.getJSONArray("features");
+            JSONArray earthquakeArray = baseJsonResponse.getJSONArray("features");
 
             for (int i = 0; i < earthquakeArray.length(); i++) {
                 //Get a single earthquake
