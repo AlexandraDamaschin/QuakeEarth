@@ -60,7 +60,7 @@ public class QueryUtils {
                 JSONObject properties = currentEarthquake.getJSONObject("properties");
 
                 //extract value for mag
-                String magnitude = properties.getString("mag");
+                double magnitude = properties.getDouble("mag");
 
                 //extract value for time
                 long time = properties.getLong("time");
