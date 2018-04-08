@@ -8,12 +8,14 @@ public class Earthquake {
     private double mMagnitude;
     private String mLocation;
     private long mTimeInMilliseconds;
+    private String mUrl;
 
     //contructor
-    public Earthquake(double magnitude, String location, long timeInMilliseconds) {
+    public Earthquake(double magnitude, String location, long timeInMilliseconds, String url) {
         mMagnitude = magnitude;
         mLocation = location;
         mTimeInMilliseconds = timeInMilliseconds;
+        mUrl = url;
     }
 
     //get magnitude
@@ -29,5 +31,10 @@ public class Earthquake {
     // get date
     public long getTimeInMilliseconds() {
         return mTimeInMilliseconds;
+    }
+
+    //get url
+    public String getmUrl() {
+        return mUrl;
     }
 }

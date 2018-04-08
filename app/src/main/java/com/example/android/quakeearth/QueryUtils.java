@@ -68,8 +68,11 @@ public class QueryUtils {
                 //extract value for place
                 String location = properties.getString("place");
 
+                //extract url
+                String url = properties.getString("url");
+
                 //create new object with mag, time and location for the response
-                Earthquake earthquake = new Earthquake(magnitude, location, time);
+                Earthquake earthquake = new Earthquake(magnitude, location, time, url);
 
                 //add new object to the list
                 earthquakes.add(earthquake);
