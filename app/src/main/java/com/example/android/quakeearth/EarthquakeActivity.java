@@ -12,6 +12,7 @@ import android.content.Loader;
 import android.app.LoaderManager;
 import android.widget.ListView;
 import android.app.LoaderManager.LoaderCallbacks;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +27,8 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderCallb
     private EarthquakeAdapter mAdapter;
     //constant value for the loader id
     private static final int EARTHQUAKE_LOADER_ID = 1;
+    //text view for empty list
+    private TextView mEmptyStateTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,10 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderCallb
         //ArrayList<Earthquake> earthquakes = QueryUtils.extractEarthquakes();
         // Find a reference to the {@link ListView} in the layout
         ListView earthquakeListView = (ListView) findViewById(R.id.list);
+
+        //empty list
+        mEmptyStateTextView = (TextView) findViewById(R.id.empty_view);
+        earthquakeListView.setEmptyView(mEmptyStateTextView);
 
         //implement adapter
         //final EarthquakeAdapter adapter = new EarthquakeAdapter(this, earthquakes);
@@ -92,6 +99,8 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderCallb
 
     @Override
     public void onLoadFinished(Loader<List<Earthquake>> loader, List<Earthquake> earthquakes) {
+        //set text for no earthquakes founded
+        mEmptyStateTextView.setText(R.string.no_earthquakes);
         // Clear the adapter of previous earthquake data
         mAdapter.clear();
         // If there is a valid list of {@link Earthquake}s, then add them to the adapter's
