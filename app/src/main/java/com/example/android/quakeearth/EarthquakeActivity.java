@@ -17,7 +17,6 @@ public class EarthquakeActivity extends AppCompatActivity {
 
     private static final String LOG_TAG = EarthquakeActivity.class.getName();
 
-
     // URL for earthquake data from the USGS dataset
     private static final String USGS_REQUEST_URL =
             "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&orderby=time&minmag=6&limit=10";
@@ -80,6 +79,14 @@ public class EarthquakeActivity extends AppCompatActivity {
 
             @Override
             protected void onPostExecute(List<Earthquake> data) {
+                // Clear the adapter of previous earthquake data
+                mAdapter.clear();
+
+                // If there is a valid list of {@link Earthquake}s, then add them to the adapter's
+                // data set. This will trigger the ListView to update.
+                if (data != null && !data.isEmpty()) {
+                    mAdapter.addAll(data);
+                }
 
             }
         }
