@@ -75,7 +75,7 @@ public class EarthquakeActivity extends AppCompatActivity {
         task.execute(USGS_REQUEST_URL);
     }
 
-    private class EthquakeAsyncTask extends AsyncTask<String, Void, List<Earthquake>> {
+    private class EarthquakeAsyncTask extends AsyncTask<String, Void, List<Earthquake>> {
 
 
         @Override
@@ -105,5 +105,4 @@ public class EarthquakeActivity extends AppCompatActivity {
 
 }
 
-}
 
