@@ -2,6 +2,7 @@ package com.example.android.quakeearth;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class EarthquakeActivity extends AppCompatActivity {
 
@@ -67,6 +69,23 @@ public class EarthquakeActivity extends AppCompatActivity {
                 startActivity(websiteIntent);
             }
         });
+        
         // start the async task to fecth data from website
+        private class EthquakeAsyncTask extends AsyncTask<String, Void, List<Earthquake>> {
+
+
+            @Override
+            protected List<Earthquake> doInBackground(String... urls) {
+
+            }
+
+            @Override
+            protected void onPostExecute(List<Earthquake> data) {
+
+            }
+        }
+
     }
+
 }
+
