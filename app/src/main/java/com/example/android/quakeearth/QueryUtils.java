@@ -44,17 +44,6 @@ public class QueryUtils {
         return earthquakes;
     }
 
-    //Returns new URL object from the given string URL.
-    private static URL createUrl(String stringUrl) {
-        URL url = null;
-        try {
-            url = new URL(stringUrl);
-        } catch (MalformedURLException e) {
-            Log.e(LOG_TAG, "Problem building the URL ", e);
-        }
-        return url;
-    }
-
     /**
      * Return a list of {@link Earthquake} objects that has been built up from
      * parsing a JSON response.
