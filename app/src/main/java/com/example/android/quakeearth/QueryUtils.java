@@ -159,5 +159,23 @@ public class QueryUtils {
         return output.toString();
     }
 
+    // Query the USGS dataset and return a list of {@link Earthquake} objects.
+    public static List<Earthquake> fetchEarthquakeData(String requestUrl) {
+        // Create URL object
+        URL url = createUrl(requestUrl);
 
+        // Perform HTTP request to the URL and receive a JSON response back
+        String jsonResponse = null;
+        try {
+            jsonResponse = makeHttpRequest(url);
+        } catch (IOException e) {
+            Log.e(LOG_TAG, "Problem making the HTTP request.", e);
+        }
+
+        // Extract relevant fields from the JSON response and create a list of {@link Earthquake}s
+        List<Earthquake> earthquakes = extractFeatureFromJson(jsonResponse);
+
+        // Return the list of {@link Earthquake}s
+        return earthquakes;
+    }
 }
