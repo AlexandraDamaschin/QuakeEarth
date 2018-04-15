@@ -4,6 +4,8 @@
 
     <!--add permision to the internet-->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!--add permision to the network state-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
