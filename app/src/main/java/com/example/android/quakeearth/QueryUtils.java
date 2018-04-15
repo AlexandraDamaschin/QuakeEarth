@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class QueryUtils {
+    private static final String LOG_TAG = EarthquakeActivity.class.getName();
 
     private QueryUtils() {
     }

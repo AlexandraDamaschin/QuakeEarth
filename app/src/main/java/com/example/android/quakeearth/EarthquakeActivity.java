@@ -69,7 +69,6 @@ public class EarthquakeActivity extends AppCompatActivity {
                 startActivity(websiteIntent);
             }
         });
-
         // start the async task to fecth data from website
         private class EthquakeAsyncTask extends AsyncTask<String, Void, List<Earthquake>> {
 
