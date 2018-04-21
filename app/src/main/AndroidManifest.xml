@@ -2,9 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.android.quakeearth">
 
-    <!--add permision to the internet-->
+    <!-- add permision to the internet -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <!--add permision to the network state-->
+    <!-- add permision to the network state -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
@@ -21,6 +21,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SettingsActivity"></activity>
     </application>
 
 </manifest>
