@@ -155,6 +155,12 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderCallb
         String minMagnitude = sharedPrefs.getString(
                 getString(R.string.settings_min_magnitude_key),
                 getString(R.string.settings_min_magnitude_default));
+        //order by
+        String orderBy = sharedPrefs.getString(
+                getString(R.string.settings_order_by_key),
+                getString(R.string.settings_order_by_default)
+        );
+
         // parse breaks apart the URI string that's passed into its parameter
         Uri baseUri = Uri.parse(USGS_REQUEST_URL);
         // buildUpon prepares the baseUri that we just parsed so we can add query parameters to it
@@ -164,7 +170,7 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderCallb
         uriBuilder.appendQueryParameter("format", "geojson");
         uriBuilder.appendQueryParameter("limit", "10");
         uriBuilder.appendQueryParameter("minmag", minMagnitude);
-        uriBuilder.appendQueryParameter("orderby", "time");
+        uriBuilder.appendQueryParameter("orderby", orderBy);
         // Return the completed uri `http://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=10&minmag=minMagnitude&orderby=time
         return new EarthquakeLoader(this, uriBuilder.toString());
     }
