@@ -139,7 +139,6 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderCallb
         //determine which item was selected and what action to take
         int id = item.getItemId();
         if (id == R.id.action_settings) {
-            //
             Intent settingsIntent = new Intent(this, SettingsActivity.class);
             startActivity(settingsIntent);
             return true;
@@ -161,7 +160,7 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderCallb
         // buildUpon prepares the baseUri that we just parsed so we can add query parameters to it
         Uri.Builder uriBuilder = baseUri.buildUpon();
 
-        // Append query parameter and its value. For example, the `format=geojson`
+        // Append query parameter and its value.
         uriBuilder.appendQueryParameter("format", "geojson");
         uriBuilder.appendQueryParameter("limit", "10");
         uriBuilder.appendQueryParameter("minmag", minMagnitude);
